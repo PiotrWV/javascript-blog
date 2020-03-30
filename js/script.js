@@ -25,13 +25,13 @@ const titleClickHandler = function (event) {
 
     /* remove class 'active' from all articles */
 
-    const activeArticles = document.querySelectorAll('article a.active');
+    const activeArticles = document.querySelectorAll('.post a.active');
 
     for (let activeArticle of activeArticles) {
 
         activeArticle.classList.remove('active');
-    }
 
+    }
 
     /* get 'href' attribute from the clicked link */
 
@@ -40,11 +40,17 @@ const titleClickHandler = function (event) {
     /* add class 'active' to the correct article */
 }
 
+
+
+
+
 const links = document.querySelectorAll('.titles a');
 
 for (let link of links) {
     link.addEventListener('click', titleClickHandler);
 }
+
+
 
 /*document.getElementById('test-button').addEventListener('click', function () {
     const links = document.querySelectorAll('.titles a');
