@@ -1,9 +1,11 @@
 'use strict';
 
-const titleClickHandler = function () {
-    console.log('Link was clicked!');
+const titleClickHandler = function (event) {
 
+    const clickedElement = this;
+    console.log('Link was clicked!');
     console.log(event);
+
 
     /* remove class 'active' from all article links  */
 
@@ -17,6 +19,12 @@ const titleClickHandler = function () {
 
     /* add class 'active' to the clicked link */
 
+    console.log('clickedElement:', clickedElement);
+
+
+
+    /* remove class 'active' from all articles */
+
     const activeArticles = document.querySelectorAll('article a.active');
 
     for (let activeArticle of activeArticles) {
@@ -24,7 +32,6 @@ const titleClickHandler = function () {
         activeArticle.classList.remove('active');
     }
 
-    /* remove class 'active' from all articles */
 
     /* get 'href' attribute from the clicked link */
 
@@ -38,3 +45,8 @@ const links = document.querySelectorAll('.titles a');
 for (let link of links) {
     link.addEventListener('click', titleClickHandler);
 }
+
+/*document.getElementById('test-button').addEventListener('click', function () {
+    const links = document.querySelectorAll('.titles a');
+    console.log('links:', links);
+})*/
