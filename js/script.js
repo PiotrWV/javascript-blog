@@ -60,3 +60,30 @@ for (let link of links) {
     const links = document.querySelectorAll('.titles a');
     console.log('links:', links);
 })*/
+
+const optArticleSelctor = '.post',
+    optTitleSelector = '.post-title',
+    optTitleListSelector = '.titles';
+
+function generateTitleLinks() {
+
+    /* remove contents of titleList */
+
+    const titleList = document.querySelector(optTitleListSelector);
+    optTitleListSelector.innerHTML = '';
+
+
+
+    /* for each article */
+
+    /* get the article id */
+
+    /* find the title element */
+
+    /* get the title from the title element */
+
+    /* create HTML of the link */
+
+    /* insert link into titleList */
+
+}
