@@ -224,8 +224,9 @@ function addClickListenersToTags() {
 
         /* add tagClickHandler as event listener for that link */
 
-        list.addEventListener(tagClickHandler);
-        // link.addEventListener('click', titleClickHandler);
+        list.addEventListener('click', tagClickHandler);
+        console.log(list);
+
 
         /* END LOOP: for each link */
     }
@@ -235,6 +236,24 @@ addClickListenersToTags();
 
 function generateAuthors() {
 
+    const authors = document.querySelector(optArticleAuthorSelector);
+    const articleAuthors = authors.getAttribute('data-author');
+    console.log(articleAuthors);
+
+
+}
+
+generateAuthors();
+
+function addClickListenersToAuthors() {
+
+
+
+}
+
+function authorClickHandler() {
+
     event.preventDefault;
+    const clickElemnt = this;
 
 }
