@@ -325,24 +325,51 @@ addClickListenersToTags();
 
 function generateAuthors() {
 
-    const authors = document.querySelector(optArticleAuthorSelector);
-    const articleAuthors = authors.getAttribute('data-author');
-    console.log(articleAuthors);
+    const posts = document.querySelectorAll(optArticleSelctor);
 
+    for (let post of posts) {
 
+        const articleAuthor = post.getAttribute('data-author');
+        post.querySelector(optArticleAuthorSelector).innerHTML = "by " + articleAuthor;
+        const linkHTML = '<p class = "post-author">"by" + articleAuthor </p>';
+        //  const authorLinks = document.querySelector('.post-author')
+    }
 }
 
 generateAuthors();
 
 function addClickListenersToAuthors() {
 
+    const linksToAuthor = document.querySelectorAll(optArticleAuthorSelector);
 
+    for (let author of linksToAuthor) {
+
+        author.addEventListener('click', generateAuthors);
+        console.log(author);
+    }
 
 }
 
-function authorClickHandler() {
+function authorClickHandler(event) {
 
     event.preventDefault;
     const clickElemnt = this;
+    const href = clickedElement.getAttribute('href');
+    const aut = href.remove('#author-', '');
+    const activeAuthorLinks = document.querySelectorAll('a.active[href^="#author"]');
+
+    for (let author of activeAuthorLinks) {
+
+        author.classList.remove('active');
+    }
+
+    const authorLinks = document.querySelectorAll('.post-author'); // nie skończone, nie do końca wiem co tu ma być
+
+    for (let link of authorLinks) {
+
+        link.classList.add('active');
+    }
+
+    generateTitleLink('[data-tags="' + tag + '"]');
 
 }
